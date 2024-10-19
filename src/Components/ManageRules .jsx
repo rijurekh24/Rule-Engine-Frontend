@@ -19,9 +19,15 @@ const RulesList = () => {
 
   const handleUpdateSubmit = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/api/rules/update/${id}`, {
-        ruleString: newRuleString,
-      });
+      await axios.put(
+        `https://rule-engine-backend-3883.onrender.com/api/rules/update/${id}`,
+        {
+          ruleString: newRuleString,
+        }
+      );
+      // await axios.put(`http://localhost:5000/api/rules/update/${id}`, {
+      //   ruleString: newRuleString,
+      // });
       setEditRuleId(null);
       setNewRuleString("");
       ctx.fetchAllRules();
@@ -32,7 +38,10 @@ const RulesList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/rules/delete/${id}`);
+      await axios.delete(
+        `https://rule-engine-backend-3883.onrender.com/api/rules/delete/${id}`
+      );
+      // await axios.delete(`http://localhost:5000/api/rules/delete/${id}`);
       ctx.fetchAllRules();
     } catch (err) {
       setError("Error deleting rule");

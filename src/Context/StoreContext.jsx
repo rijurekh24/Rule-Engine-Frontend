@@ -5,9 +5,16 @@ const storeContext = createContext();
 const StoreContext = ({ children }) => {
   const [rules, setRules] = useState([]);
   const fetchAllRules = () => {
-    axios.get("http://localhost:5000/api/rules/getallrules").then((res) => {
-      setRules(res.data);
-    });
+    // axios.get("http://localhost:5000/api/rules/getallrules").then((res) => {
+    //   setRules(res.data);
+    // });
+    axios
+      .get(
+        "https://rule-engine-backend-3883.onrender.com/api/rules/getallrules"
+      )
+      .then((res) => {
+        setRules(res.data);
+      });
   };
 
   const value = {

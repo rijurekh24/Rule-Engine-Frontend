@@ -13,9 +13,13 @@ const CreateRule = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/rules/create",
+        "https://rule-engine-backend-3883.onrender.com/api/rules/create",
         { ruleString }
       );
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/rules/create",
+      //   { ruleString }
+      // );
 
       if (response.data.success) {
         setSuccess(true);

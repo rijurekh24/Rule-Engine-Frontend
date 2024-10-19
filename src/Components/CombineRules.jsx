@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
+import { storeContext } from "../Context/StoreContext";
 
 const CombineRules = () => {
   const [ruleIds, setRuleIds] = useState("");
   const [combinedAST, setCombinedAST] = useState(null);
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const ctx = useContext(storeContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
 
     try {
       const response = await axios.post(
@@ -16,6 +20,8 @@ const CombineRules = () => {
         { ruleIds: ruleIds.split(",").map((id) => id.trim()) }
       );
       setCombinedAST(response.data.combinedAST);
+      ctx.fetchAllRules();
+      setSuccess("Rules combined successfully!");
     } catch (err) {
       setError("Error combining rules");
     }
@@ -42,19 +48,12 @@ const CombineRules = () => {
           Combine Rules
         </button>
       </form>
-      {combinedAST && (
-        <div className="mt-4">
-          <h3 className="font-bold">Combined AST:</h3>
-          <pre className="bg-gray-100 p-2 rounded whitespace-pre-line">
-            {JSON.stringify(combinedAST, null, 2)}
-          </pre>
-        </div>
-      )}
+      {success && <p className="text-green-500 mt-2">{success}</p>}{" "}
       {error && <p className="text-red-500 mt-2">{error}</p>}
       <h3 className="mt-4 font-bold">Examples:</h3>
       <p>Input Rule IDs as comma-separated values, e.g.,</p>
       <pre className="bg-gray-100 p-2 rounded whitespace-pre-line">
-        "60d21b4667d0d8992e610c85, 60d21b4667d0d8992e610c86"
+        60d21b4667d0d8992e610c85, 60d21b4667d0d8992e610c86 ,....
       </pre>
     </div>
   );

@@ -18,9 +18,13 @@ const EvaluateRule = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/rules/evaluate",
+        "https://rule-engine-backend-3883.onrender.com/api/rules/evaluate",
         { ruleId, data }
       );
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/rules/evaluate",
+      //   { ruleId, data }
+      // );
       setResult(response.data.result);
     } catch (err) {
       setError("Error evaluating rule");
@@ -93,7 +97,13 @@ const EvaluateRule = () => {
       {result !== null && (
         <div className="mt-4">
           <h3 className="font-bold">Evaluation Result:</h3>
-          <p>{result ? "True" : "False"}</p>
+          <p>
+            {result ? (
+              <p className="text-green-500 mt-2">Eligible! (True)</p>
+            ) : (
+              <p className="text-red-500 mt-2">Not Eligible! (False)</p>
+            )}
+          </p>
         </div>
       )}
       {error && <p className="text-red-500 mt-2">{error}</p>}
