@@ -81,7 +81,7 @@ const RulesList = () => {
                   className="mt-2 bg-blue-500 text-white rounded px-2 py-1 ml-2"
                   onClick={() => handleUpdateClick(rule.id, rule.ruleString)}
                 >
-                  Update
+                  Edit
                 </button>
               )}
               <button
