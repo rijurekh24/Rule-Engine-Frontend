@@ -16,9 +16,13 @@ const CombineRules = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/rules/combine",
+        "https://rule-engine-backend-3883.onrender.com/api/rules/combine",
         { ruleIds: ruleIds.split(",").map((id) => id.trim()) }
       );
+      // const response = await axios.post(
+      //   "http://localhost:5000/api/rules/combine",
+      //   { ruleIds: ruleIds.split(",").map((id) => id.trim()) }
+      // );
       setCombinedAST(response.data.combinedAST);
       ctx.fetchAllRules();
       setSuccess("Rules combined successfully!");
