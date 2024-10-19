@@ -59,6 +59,8 @@ const CreateRule = () => {
       <h3 className="mt-4 font-bold">Examples:</h3>
       <pre className="bg-gray-100 p-2 rounded whitespace-pre-line">
         {`rule1 = "((age > 30 AND department = 'Sales') OR (age < 25 AND department = 'Marketing')) AND (salary > 50000 OR experience > 5)"`}
+        {`rule2 = "((age > 30 AND department = 'Marketing')) AND (salary > 20000 OR experience > 5)"
+`}
       </pre>
     </>
   );
