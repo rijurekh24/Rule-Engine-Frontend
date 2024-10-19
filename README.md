@@ -1,8 +1,36 @@
-# React + Vite
+# Rule Engine with AST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live URL
+```https://rule-engine-ast-live.vercel.app/```
 
-Currently, two official plugins are available:
+## Objective
+This application aims to develop a simple 3-tier rule engine that determines user eligibility based on
+attributes such as age, department, income, and spend. The system uses an **Abstract Syntax Tree (AST)** to
+represent conditional rules, allowing dynamic creation, combination, and modification of rules.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Dynamic rule creation, modification, and combination using AST.
+- Rule-based user eligibility checks based on attributes like age, department, salary, and experience.
+- Flexible rule evaluation using AST for efficient decision-making.
+- Combines multiple rules into a single AST for optimized checks.
+- Handles complex conditions like AND, OR, and nested logical expressions.
+- Rules can be updated and deleted (Bonus)
+
+## Prerequisites
+Node.js: Version 14 or higher
+API Endpoint: A running instance of the backend service (see the backend repository for setup instructions).
+
+## Installation
+1. Clone the repository:
+ ```
+ git clone https://github.com/rijurekh24/Rule-Engine-Frontend.git
+ cd rule-engine-frontend
+ ```
+2. **Install dependencies**:
+ ```
+ npm install
+ ```
+3. **Start the server**:
+ ```
+ npm run dev
+ ```
