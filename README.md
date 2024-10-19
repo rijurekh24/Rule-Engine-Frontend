@@ -1,4 +1,4 @@
-# Rule Engine with AST
+# Rule Engine with AST (Frontend)
 
 ## Live URL
 ```https://rule-engine-ast-live.vercel.app/```
