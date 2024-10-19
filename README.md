@@ -3,6 +3,9 @@
 ## Live URL
 ```https://rule-engine-ast-live.vercel.app/```
 
+## Tech Stack
+React js, Tailwind css
+
 ## Objective
 This application aims to develop a simple 3-tier rule engine that determines user eligibility based on
 attributes such as age, department, income, and spend. The system uses an **Abstract Syntax Tree (AST)** to
