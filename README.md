@@ -1,7 +1,7 @@
 # Rule Engine with AST (Frontend)
 
 ## Live URL
-```https://rule-engine-ast-live.vercel.app/```
+```https://rule-engine-ast-live.vercel.app/```  ```(Note: The free server that is being used is slow, please wait a while if the data doesn't appear immediately , please continue refreshing or please run locally )```
 
 ## Tech Stack
 React js, Tailwind css
